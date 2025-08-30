@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 글로벌 AI 트렌드 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 15mm;}
+        @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);}
+        .gs-green { color: #009999; }
+        .gs-blue { color: #0798CE; }
+        .gs-bg-green { background: linear-gradient(135deg, #D0F5F5 0%, #EDFDFD 100%); }
+        .gs-bg-blue { background: linear-gradient(135deg, #E0F7FF 0%, #DAEDFB 100%); }
+        .glass-effect { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);}
+        .metric-card { position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+        .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #009999, #0798CE, #F59E0B, #EF4444, #8B5CF6); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite;}
+        .metric-card::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s;}
+        .metric-card:hover::after { left: 100%;}
+        .metric-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.07);}
+        .insight-card { position: relative; overflow: hidden; transition: all 0.3s ease;}
+        .insight-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--accent-color); transition: width 0.3s ease;}
+        .insight-card:hover::before { width: 8px;}
+        .floating-element { animation: float 6s ease-in-out infinite;}
+        .pulse-dot { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;}
+        .gradient-text { background: linear-gradient(135deg, #009999, #0798CE, #F59E0B); -webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text;}
+        .morphing-bg { background: linear-gradient(-45deg, #D0F5F5, #D8F7E5, #FEF3C7, #FEF2F2); background-size: 400% 400%; animation: gradient 15s ease infinite;}
+        .neon-glow { box-shadow: 0 0 20px rgba(0, 153, 153, 0.18), 0 0 40px rgba(7, 152, 206, 0.13);}
+        .data-visualization { position: relative; overflow: hidden;}
+        .data-visualization::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(0, 153, 153, 0.07) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(7, 152, 206, 0.08) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.06) 0%, transparent 50%); pointer-events: none;}
+        @keyframes shimmer {0% {background-position: -200% 0;} 100% {background-position: 200% 0;}}
+        @keyframes float {0%,100%{transform:translateY(0px);}50%{transform:translateY(-10px);}}
+        @keyframes pulse {0%,100%{opacity:1;}50%{opacity:.5;}}
+        @keyframes gradient {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+        .section-divider {height:2px; background:linear-gradient(90deg, transparent, #009999, #0798CE, #F59E0B, transparent); margin:3rem 0; position:relative;}
+        .section-divider::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; background: white; border: 2px solid #009999; border-radius: 50%; box-shadow: 0 0 0 4px rgba(0,153,153,0.14);}
+        @keyframes slideIn {0%{width:0%;}100%{width:var(--target-width,75%);}}
+        @keyframes fadeInUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+        @keyframes scaleIn {0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+        .animate-fadeInUp {animation:fadeInUp 0.8s ease-out;}
+        .animate-scaleIn {animation:scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+        .hover-lift:hover {transform:translateY(-12px) scale(1.03);box-shadow:0 25px 50px rgba(0,0,0,0.14);}
+    </style>
+</head>
+<body>
+<div class="max-w-5xl mx-auto p-8">
+    <!-- Header -->
+    <header class="mb-16 relative">
+        <div class="absolute inset-0 morphing-bg rounded-3xl opacity-20"></div>
+        <div class="glass-effect rounded-3xl p-10 toss-shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-200/30 to-green-200/30 rounded-full -translate-y-20 translate-x-20 blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-green-200/30 to-yellow-200/30 rounded-full translate-y-16 -translate-x-16 blur-xl"></div>
+            <div class="flex justify-between items-start relative z-10">
+                <div class="flex-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="inline-block px-4 py-2 bg-gradient-to-r from-cyan-100 to-green-100 text-cyan-700 text-sm font-semibold rounded-full shadow-sm neon-glow">
+                            <i class="material-icons text-sm mr-1">description</i>
+                            전략보고서
+                        </span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-cyan-400 rounded-full pulse-dot"></div>
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-dot" style="animation-delay: 0.2s;"></div>
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full pulse-dot" style="animation-delay: 0.4s;"></div>
+                        </div>
+                    </div>
+                    <h1 class="text-5xl font-bold gradient-text mb-4 leading-tight">2024 글로벌 AI 트렌드 보고서</h1>
+                    <p class="text-2xl text-[#348A8A] font-light leading-relaxed">AI가 산업을 혁신하는 방식과 선도 기업이 미래 경쟁력을 확보하는 전략적 인사이트</p>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-full"></div>
+                        <span class="text-sm text-gray-500 font-medium">최종 업데이트 2025-08-30 17:21:20</span>
+                    </div>
+                </div>
+                <div class="text-right ml-12">
+                    <div class="w-28 h-28 gs-bg-green rounded-3xl flex items-center justify-center mb-6 neon-glow floating-element relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                        <span class="font-bold text-3xl gs-green relative z-10">GS칼텍스</span>
+                    </div>
+                    <div class="text-sm text-gray-400 space-y-2">
+                        <div class="flex items-center justify-end space-x-2">
+                            <i class="material-icons text-xs">schedule</i>
+                            <p class="font-medium">2025-08-30 17:21:20</p>
+                        </div>
+                        <div class="flex items-center justify-end space-x-2">
+                            <i class="material-icons text-xs">verified</i>
+                            <p class="text-xs">검증완료</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 현황 분석 -->
+    <section class="mb-16 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-green mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">analytics</i> 현황 분석
+        </h2>
+        <p class="text-gray-600 mb-6">
+            2024년 글로벌 AI 트렌드 보고서는 1,519명의 글로벌 AI 의사결정자 및 실무자 대상 설문조사와 고위 IT임원 인터뷰를 바탕으로 AI의 현재 현황, 리더십, 도입 성숙도, 확장 장애요인, 생성형 AI, GPU 인프라, 환경영향 등 핵심 이슈를 조망합니다. AI는 이미 엔터프라이즈 전반에 깊이 침투하여 제품 품질과 IT 효율성 향상에 전략적 투자가 집중되고 있습니다. 실제로 AI 성숙도와 도입 비율은 전년대비 대폭 증가하였으며, 응답자 중 33%가 "AI가 조직에서 널리 구현되어 핵심 가치를 창출 중"이라 답변했습니다. 하지만 데이터 품질 및 레거시 아키텍처는 확장에 주요 장애로 작용하고 있습니다.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-cyan-600 text-xl">trending_up</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">시장 성장률</h3>
+                <p class="text-4xl font-bold gs-green mb-2">AI 도입 조직 비율 88% (생성형 AI 24% 조직에서 통합)</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-cyan-600 to-green-400 rounded-full" style="width: 80%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-blue-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-green-700 text-xl">assessment</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">내부 역량지수</h3>
+                <p class="text-4xl font-bold gs-green mb-2">상위 10% 리더: 생산환경 AI/ML, 전사적 확장, 생성형 AI 통합</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 rounded-full" style="width: 72%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-100 to-green-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-amber-500 text-xl">group</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">경쟁사 점유율</h3>
+                <p class="text-4xl font-bold gs-green mb-2">북미 AI 리더 비중 16% (아시아 8%, EMEA 6%)</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-yellow-400 to-green-400 rounded-full" style="width: 60%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h-64 data-visualization glass-effect rounded-2xl flex items-center justify-center border border-gray-200 relative overflow-hidden mt-8">
+            <div class="absolute inset-0 morphing-bg opacity-30"></div>
+            <div class="absolute top-4 left-4 flex space-x-2">
+                <div class="w-3 h-3 bg-cyan-500 rounded-full pulse-dot"></div>
+                <div class="w-3 h-3 bg-green-400 rounded-full pulse-dot" style="animation-delay: 0.3s;"></div>
+                <div class="w-3 h-3 bg-yellow-400 rounded-full pulse-dot" style="animation-delay: 0.6s;"></div>
+            </div>
+            <div class="text-center relative z-10">
+                <div class="w-20 h-20 bg-gradient-to-br from-cyan-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg floating-element">
+                    <i class="material-icons text-cyan-600 text-4xl">bar_chart</i>
+                </div>
+                <span class="text-gray-600 font-semibold text-lg">AI 도입 및 성숙도 트렌드 (2023→2024): 조직 내 광범위 도입 28%→33% 증가, 소수 적용 26%→33% 상승, 단일 사례 16% 고정, 전략 내 소규모 역할 30%→17% 감소</span>
+                <div class="mt-3 flex justify-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-cyan-600 rounded-full"></div>
+                        <span class="text-xs text-gray-500">당사</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span class="text-xs text-gray-500">업계 평균</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <span class="text-xs text-gray-500">주요 경쟁사</span>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-green-500 to-yellow-400"></div>
+        </div>
+        <div class="text-xs text-gray-400 mt-2 text-right">출처: S&P Global Market Intelligence <a href="https://www.spglobal.com/marketintelligence" class="underline">2024 Global Trends in AI</a></div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- 목표 및 전략 -->
+    <section class="mb-16 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-blue mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">flag</i> 목표 및 전략
+        </h2>
+        <p class="text-gray-600 mb-6">
+            AI 전략의 핵심 목표는 제품/서비스 품질 향상(42%), IT 효율성·운영효율 증대(41%), 근로생산성 강화(40%), 매출성장(39%), 혁신 가속화(39%) 등입니다. 상위 AI 리더들은 데이터 아키텍처 현대화, 생성형 AI 통합, GPU 및 인프라 혁신을 통해 전사적 확장과 차별화된 경쟁력을 확보하고 있습니다.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-green-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-blue-600 text-xl">star</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">제품/서비스 품질 향상</h3>
+                <p class="text-4xl font-bold gs-blue mb-2">42%</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-500 to-blue-500 rounded-full" style="width: 75%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-blue-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-emerald-600 text-xl">flash_on</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">IT 효율화 및 운영비 절감</h3>
+                <p class="text-4xl font-bold text-emerald-600 mb-2">41%</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full" style="width: 80%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-100 to-green-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-yellow-500 text-xl">timeline</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">혁신 가속화</h3>
+                <p class="text-4xl font-bold text-yellow-500 mb-2">39%</p>
+                <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-yellow-500 to-green-400 rounded-full" style="width: 65%; animation: slideIn 1.5s ease-out;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="insight-card glass-effect rounded-2xl p-8 mb-8" style="--accent-color: #009999;">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-50/50 via-transparent to-green-50/30"></div>
+            <div class="flex items-start space-x-6 pl-6 relative z-10">
+                <div class="w-16 h-16 bg-gradient-to-br from-cyan-100 to-green-100 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg neon-glow floating-element">
+                    <i class="material-icons text-cyan-700 text-2xl">lightbulb</i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <h3 class="text-xl font-bold gradient-text">AI 리더의 전략적 인사이트</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed text-base">
+                        AI 리더들은 데이터 아키텍처를 우선적으로 현대화하여 확장성을 확보했고, 생성형 AI, 예측·분류·전문가시스템 등 다양한 AI 포트폴리오를 활용합니다. 또한 인프라 구축 시 보안, GPU·AI 가속기 접근성, 데이터 프라이버시, 확장성, 고객지원 등 다각도의 기준을 반영하며, 단기 비용보다 장기 혁신 측면에서 투자를 결정합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="h-64 data-visualization glass-effect rounded-2xl flex items-center justify-center border border-gray-200 relative overflow-hidden">
+            <div class="absolute inset-0 morphing-bg opacity-30"></div>
+            <div class="text-center relative z-10">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg floating-element">
+                    <i class="material-icons text-blue-600 text-4xl">pie_chart</i>
+                </div>
+                <span class="text-gray-600 font-semibold text-lg">AI 전략 프레임워크: 데이터·인프라 혁신, 생성형 AI 통합, 지속가능성 강화의 삼각구조</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 실행 계획 -->
+    <section class="mb-16 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-green mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">track_changes</i> 실행 계획
+        </h2>
+        <p class="text-gray-600 mb-6">
+            AI 프로젝트의 대규모 확장 및 생산 전환을 위해 데이터 아키텍처 강화, 생성형 AI 예산 확대, GPU 확보 및 클라우드 인프라 확장, 지속가능성 실천, 다양한 AI 유형 실험이 병행되어야 합니다. 상위 리더 기업은 복수의 실행 Task를 동시 추진하며, 각 단계별로 명확한 책임과 일정, 성과관리를 실시합니다.
+        </p>
+        <div class="overflow-hidden rounded-xl border border-gray-200 mb-8">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gradient-to-r from-gray-50 to-gray-100">
+                        <th class="px-6 py-4 text-left font-semibold text-gray-700 text-sm uppercase tracking-wider">주요 Task</th>
+                        <th class="px-6 py-4 text-left font-semibold text-gray-700 text-sm uppercase tracking-wider">담당</th>
+                        <th class="px-6 py-4 text-left font-semibold text-gray-700 text-sm uppercase tracking-wider">일정</th>
+                        <th class="px-6 py-4 text-left font-semibold text-gray-700 text-sm uppercase tracking-wider">진행률</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">데이터 아키텍처 현대화 및 통합</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">IT 인프라팀</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">2024년 3분기 ~ 2025년 1분기</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">진행중(60%)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">생성형 AI 예산 확대 및 전사 활용 확대</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">AI 전략팀</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">2024년 4분기 ~ 2025년 2분기</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">진행중(40%)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">GPU·AI 클라우드 인프라 최적화</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">인프라·클라우드팀</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">2024년 4분기 ~ 2025년 3분기</td>
+                        <td class="px-6 py-4 text-sm text-gray-600">진행중(20%)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="h-48 data-visualization glass-effect rounded-2xl flex items-center justify-center border border-gray-200 relative overflow-hidden">
+            <div class="absolute inset-0 morphing-bg opacity-30"></div>
+            <div class="text-center relative z-10">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-100 to-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg floating-element">
+                    <i class="material-icons text-green-600 text-3xl">timeline</i>
+                </div>
+                <span class="text-gray-600 font-semibold text-base">AI 실행 로드맵 예시: 데이터→AI 개발→GPU 인프라→서비스 확장</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 예상 효과 -->
+    <section class="mb-16 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-blue mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">show_chart</i> 예상 효과
+        </h2>
+        <p class="text-gray-600 mb-6">
+            생성형 AI 및 데이터 기반 전략 실행 시, 혁신·신제품 출시속도(79%↑), 품질 개선(74%↑), 시장 차별화(67%↑), IT 효율성 및 비용절감, 매출 성장 등 다양한 효과가 확인됩니다. 조직 전반에 AI가 내재되면 지속적인 경쟁우위 확보가 기대됩니다.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-yellow-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-blue-700 text-xl">attach_money</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">예상 매출</h3>
+                <p class="text-4xl font-bold gs-blue mb-2">AI 활용 기업 39%가 매출 증대 목표</p>
+            </div>
+            <div class="metric-card glass-effect rounded-2xl p-6 hover-lift">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-blue-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-green-700 text-xl">equalizer</i>
+                    </div>
+                </div>
+                <h3 class="font-medium text-gray-500 text-sm mb-3">시장 점유율</h3>
+                <p class="text-4xl font-bold gs-green mb-2">AI 리더 집단의 경쟁우위 확대</p>
+            </div>
+        </div>
+        <div class="h-56 data-visualization glass-effect rounded-2xl flex items-center justify-center border border-gray-200 relative overflow-hidden">
+            <div class="absolute inset-0 morphing-bg opacity-30"></div>
+            <div class="text-center relative z-10">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg floating-element">
+                    <i class="material-icons text-blue-600 text-3xl">bar_chart</i>
+                </div>
+                <span class="text-gray-600 font-semibold text-base">성과지표: 혁신률(79%), 신제품 출시(76%), 품질향상(74%), 차별화(67%)</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 리스크 관리 -->
+    <section class="mb-16 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-green mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">warning</i> 리스크 관리
+        </h2>
+        <p class="text-gray-600 mb-6">
+            AI 도입·확산 과정에서 데이터 품질, GPU 인프라 확보, 환경영향, 보안·프라이버시 등 다양한 리스크가 발생합니다. 선도 조직은 리스크 식별·대응체계와 지속가능성 실천으로 위험을 최소화합니다.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="insight-card glass-effect rounded-2xl p-8" style="--accent-color: #EF4444;">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-50/70 via-transparent to-red-50/20"></div>
+                <div class="flex items-start space-x-6 pl-6 z-10">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-100 to-orange-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-red-500 text-2xl">warning</i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-red-600 mb-1">데이터 품질/아키텍처 리스크</h3>
+                        <p class="text-gray-600 text-sm">AI 프로젝트 대규모 확장의 최대 장애요인은 데이터 품질(42%) 및 레거시 아키텍처로, 프로젝트가 파일럿 단계에 머무르는 경우가 다수 발생합니다.</p>
+                        <div class="mt-2 text-xs text-gray-400">대응: 데이터 거버넌스 및 현대화, 통합 데이터 플랫폼 구축</div>
+                    </div>
+                </div>
+            </div>
+            <div class="insight-card glass-effect rounded-2xl p-8" style="--accent-color: #F59E0B;">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-50/60 via-transparent to-yellow-50/20"></div>
+                <div class="flex items-start space-x-6 pl-6 z-10">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-100 to-green-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                        <i class="material-icons text-yellow-500 text-2xl">shield</i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-yellow-700 mb-1">GPU 인프라/지속가능성 리스크</h3>
+                        <p class="text-gray-600 text-sm">GPU 및 AI 가속기 접근성 부족(30~44%), AI의 에너지·탄소발자국에 대한 우려(64%)가 생산환경 전환과 확장에 장애로 작용</p>
+                        <div class="mt-2 text-xs text-gray-400">대응: GPU 클라우드·전문 AI 클라우드 활용, 에너지효율 IT·지속가능성 가이드라인 수립</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 결론 및 권장사항 -->
+    <section class="mb-24 animate-fadeInUp">
+        <h2 class="text-2xl font-bold gs-blue mb-4 flex items-center">
+            <i class="material-icons mr-2 text-xl">check_circle</i> 결론 및 권장사항
+        </h2>
+        <div class="insight-card glass-effect rounded-2xl p-8" style="--accent-color: #0798CE;">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50/70 via-transparent to-cyan-50/30"></div>
+            <div class="flex items-start space-x-6 pl-6 z-10">
+                <div class="w-14 h-14 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center shadow-lg floating-element">
+                    <i class="material-icons text-blue-600 text-2xl">tips_and_updates</i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold gs-blue mb-1">AI 성공을 위한 5대 권장사항</h3>
+                    <p class="text-gray-600 text-sm">
+                        1) AI 확장 성공을 위한 데이터 아키텍처 투자<br>
+                        2) 생성형 AI에 대한 전략적 예산/인프라 집중<br>
+                        3) IT 효율화 및 자동화, 혁신 촉진을 위한 생성형 AI 적극 활용<br>
+                        4) 인프라/벤더 변경 등 다양한 지속가능성 실천 병행<br>
+                        5) 다양한 AI 유형의 통합적 전략 수립 및 전사 확장<br>
+                        <span class="block mt-2 text-xs text-gray-500">출처: S&P Global Market Intelligence 451 Research Global Trends in AI custom survey, 2024</span>
+                    </p>
+                    <div class="mt-2 text-xs text-gray-400">Next Step: 데이터 거버넌스 정비 및 AI-Ready 인프라 구축, 생성형 AI의 전사적 확대</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-xs text-gray-400 mt-6 text-right">
+            본 보고서는 S&P Global Market Intelligence(2024 Global Trends in AI Report) 자료를 기반으로 작성되었습니다.<br>
+            <a href="https://www.spglobal.com/marketintelligence" class="underline">원본 보고서 확인</a>
+        </div>
+    </section>
+</div>
+</body>
+</html>

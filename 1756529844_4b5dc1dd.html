@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News Brief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8 min-h-screen">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+        <!-- 헤더 섹션 -->
+        <div class="bg-blue-600 p-6 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Daily News Brief</h1>
+                    <p class="text-blue-100">2025-08-30</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="material-icons">schedule</i>
+                    <span>AM 8:00 기준</span>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- 주요 뉴스 섹션 -->
+        <div class="p-6 space-y-6">
+            <!-- 핵심 이슈 -->
+            <div class="glass-effect p-4 rounded-xl border-l-4 border-blue-600">
+                <h2 class="text-lg font-bold text-blue-800 mb-2">오늘의 핵심 이슈</h2>
+                <p class="text-gray-700">• 미국 트럼프 행정부가 삼성전자와 SK하이닉스의 중국 공장에 대한 '검증된 최종 사용자'(VEU) 프로그램 자격을 취소함에 따라, 국내 반도체 기업이 중국 내 공장 운영에 심각한 불확실성에 직면했습니다. 장비반출 규제로 인해 국내 기업들은 단기적 피해가 불가피하며, 미중 패권경쟁 속에서 반도체 산업의 불확실성이 확대되고 있습니다.</p>
+            </div>
+ 
+            <!-- 주요 뉴스 그리드 -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 border rounded-lg hover:shadow-md transition-shadow">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="material-icons text-blue-600">trending_up</i>
+                        <h3 class="font-semibold">시장 동향</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">• 트럼프 행정부의 미·중 기술패권 경쟁 본격화, 미국 중심의 반도체 공급망 재편 가속화, 글로벌 상호관세 및 품목관세(최대 100%) 부과 가능성 등으로 국내 및 글로벌 반도체 시장의 불확실성과 경영 위기 심화.</p>
+                </div>
+ 
+                <div class="p-4 border rounded-lg hover:shadow-md transition-shadow">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="material-icons text-blue-600">business</i>
+                        <h3 class="font-semibold">산업 동향</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">• 미 정부의 중국 반도체 산업 견제 정책이 강화되며, 삼성전자·SK하이닉스 등 국내 기업의 경영 전략 수립과 중국 공장 운영에 중대한 차질 발생. 반도체 장비 반입 제한, AI 칩 수출규제 확대, 인텔 지분 확보 등 미국의 산업 경쟁력 강화 정책이 지속적으로 발표되고 있습니다.</p>
+                </div>
+            </div>
+ 
+            <!-- 주요 인사이트 -->
+            <div class="bg-blue-50 p-4 rounded-xl">
+                <h2 class="text-lg font-bold text-blue-800 mb-3">핵심 인사이트</h2>
+                <div class="space-y-2">
+                    <div class="flex items-start space-x-2">
+                        <i class="material-icons text-blue-600">lightbulb</i>
+                        <p class="text-sm text-gray-700">• 미국의 예측 불가능한 정책 변화와 협상 전략(트럼프 대통령의 거래 기술)이 반도체 기업의 대응을 어렵게 하며, 단기·중장기 경영 전략 재검토가 필수적입니다.</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <i class="material-icons text-blue-600">lightbulb</i>
+                        <p class="text-sm text-gray-700">• VEU 자격 취소에도 120일 유예기간 및 '현상 유지'를 위한 장비 반입 허용 등 부분적 협상 여지가 있으나, 미국의 자국 산업 육성 방향은 변함 없으므로, 향후 변화에 따른 시나리오별 대응 필요성이 증대되고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- 대응 방안 -->
+            <div class="border-t pt-4">
+                <h2 class="text-lg font-bold text-gray-800 mb-2">권장 대응 방안</h2>
+                <div class="flex items-start space-x-2">
+                    <i class="material-icons text-blue-600">arrow_forward</i>
+                    <p class="text-sm text-gray-700">• 미국의 반도체 규제 정책 변화에 대비하여 시나리오별 리스크 관리 및 중장기 경영 전략 재정비가 필요합니다. 단기 피해 완화와 함께 미국 중심 공급망 정책 및 중국 내 사업 운영에 대한 다양한 전략적 대안 검토가 요구됩니다.</p>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- 푸터 -->
+        <div class="bg-gray-50 p-4 text-center text-sm text-gray-500">
+            <span>출처: <a href="https://www.yna.co.kr/view/AKR20250830026900003?input=1195m" class="text-blue-600 underline">연합뉴스</a> | 기사 발행일: 2025.08.30 | 보고서 생성일: 2025-08-30 13:57:05</span>
+        </div>
+    </div>
+</body>
+</html>

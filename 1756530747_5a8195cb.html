@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            letter-spacing: -0.025em;
+        }
+        .modern-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .modern-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        h1, h2, h3 { 
+            font-weight: 700; 
+            letter-spacing: -0.05em;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8 min-h-screen">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
+        <!-- 헤더 섹션 -->
+        <div class="bg-gray-900 p-6 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tight">Professional Report</h1>
+                    <p class="text-gray-300">2025-08-30 14:12:03</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="material-icons">schedule</i>
+                    <span>Generated Report</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 주요 뉴스 섹션 -->
+        <div class="p-6 space-y-6">
+            <!-- 핵심 이슈 -->
+            <div class="glass-effect p-4 rounded-xl border-l-4 border-red-500">
+                <h2 class="text-xl font-bold tracking-tight text-gray-900 mb-2">Executive Summary</h2>
+                <p class="text-gray-700">
+                    • SK그룹이 울산에 대규모 AI 데이터센터(SKAI데이터센터 울산) 건설을 시작하며, AWS와의 협력 및 그룹 내 주요 계열사의 역량을 총결집해 국내 AI 인프라를 아시아태평양 허브로 육성한다는 전략을 발표했습니다. 2027년 41MW 기준 가동, 2029년 103MW 전체 가동, 7조원 규모 투자를 통해 고집적 GPU와 첨단 냉각·네트워크 기술을 집약한 시설을 구축할 예정입니다.
+                </p>
+            </div>
+
+            <!-- 주요 뉴스 그리드 -->
+            <div class="grid grid-cols-2 gap-6">
+                <div class="modern-card p-6 border rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="material-icons text-red-600">trending_up</i>
+                        <h3 class="font-semibold">Key Findings</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        • SKAI데이터센터 울산은 비수도권 최대 AI 전용 데이터센터로, 2027년 41MW, 2029년 103MW로 단계적 확장, 최종적으로 GW급의 아태 AI 허브를 목표로 함.<br>
+                        • AWS의 40억 달러(약 5조5천억원) 투자 포함, 총 7조원 규모.<br>
+                        • 서버랙당 20~40kW 전력 소모, 100kW 이상 고밀도 냉각 필요 등 첨단 설계.<br>
+                        • SKT, SK브로드밴드, SK에코플랜트, SK가스, SK케미칼, SK하이닉스 등 그룹 ICT·에너지·반도체 역량 결집.<br>
+                        • 안정적 LNG 연료 공급, 저렴한 전력, 해저케이블 인프라 등 울산의 입지적 강점 부각.
+                    </p>
+                </div>
+
+                <div class="modern-card p-6 border rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="material-icons text-red-600">business</i>
+                        <h3 class="font-semibold">Analysis</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        • SK그룹은 부지 확보부터 설계, 전력, 네트워크 등 인프라 전반을 직접 주도함으로써, 기존 데이터센터 대비 AI 연산에 최적화된 초고집적 구조와 냉각·네트워크 혁신을 실현하고 있습니다.<br>
+                        • 그룹 주요 계열사의 협업으로 ICT, 에너지, 반도체 등 한국의 핵심 산업 경쟁력 강화.<br>
+                        • AWS의 'AI존' 등 클라우드 기반 서비스가 국내·아태 AI 수요에 신속 대응.<br>
+                        • SKT는 2030년까지 300MW의 데이터센터 용량 확보, 연 매출 1조원 달성 목표를 제시함.<br>
+                        • SK에코플랜트는 연료전지 기반 전력공급과 냉각 기술력을 바탕으로 미래 AI데이터센터 시장 포트폴리오 확대.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 주요 인사이트 -->
+            <div class="bg-gray-50 p-4 rounded-xl">
+                <h2 class="text-xl font-bold tracking-tight text-gray-900 mb-3">Insights</h2>
+                <div class="space-y-2">
+                    <div class="flex items-start space-x-2">
+                        <i class="material-icons text-red-600">lightbulb</i>
+                        <p class="text-sm text-gray-700">
+                            • 울산 AI데이터센터는 단순한 시설 건립을 넘어 한국 디지털 경제의 미래 인프라로, 그룹 역량 통합을 통한 국가 산업 경쟁력의 상징적 사례가 될 것으로 예상됩니다.
+                        </p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <i class="material-icons text-red-600">lightbulb</i>
+                        <p class="text-sm text-gray-700">
+                            • AWS와의 협력을 기반으로, 글로벌 AI 클라우드 수요에 효과적으로 대응하며 국내·아시아태평양 시장에서 전략적 AI 허브로 성장할 가능성이 높습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 대응 방안 -->
+            <div class="border-t pt-4">
+                <h2 class="text-xl font-bold tracking-tight text-gray-800 mb-2">Recommendations</h2>
+                <div class="flex items-start space-x-2">
+                    <i class="material-icons text-red-600">arrow_forward</i>
+                    <p class="text-sm text-gray-700">
+                        • 정부 및 산업계는 AI 중심 데이터센터 인프라 확장에 있어 전력·냉각·네트워크 등 첨단 기술 개발 및 융합을 지속적으로 지원해야 하며, 글로벌 협력 모델을 확대해 국내 AI 산업 생태계의 국제적 위상 강화를 추진할 필요가 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="bg-gray-50 p-4 text-center text-sm text-gray-500">
+            <span>출처: <a class="text-red-600 underline" href="https://www.bloter.net/news/articleView.html?idxno=642957" target="_blank">블로터(2025.08.29) 기사 원문</a></span>
+        </div>
+    </div>
+</body>
+</html>
